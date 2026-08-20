@@ -1,9 +1,10 @@
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { CircleArrowRight } from 'lucide-react'
+import { SiteFooter } from '@/components/site-footer'
 
 export default function LoginPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-header text-header-foreground">
       {/* Light top utility bar */}
       <div className="border-b border-black/10 bg-[#e6e6e6]">
         <div className="mx-auto flex max-w-[1400px] items-center justify-end gap-8 px-6 py-2.5 text-sm font-medium text-navy">
@@ -88,11 +89,13 @@ export default function LoginPage() {
               className="mt-2 flex items-center justify-center gap-2 rounded-full bg-mint px-8 py-4 text-xl font-bold text-mint-foreground shadow-lg transition-transform hover:scale-[1.01] active:scale-95"
             >
               Continue
-              <ArrowRight className="size-5" />
+              <CircleArrowRight className="size-6" strokeWidth={2} />
             </button>
           </form>
         </div>
       </div>
+
+      <SiteFooter />
     </main>
   )
 }
