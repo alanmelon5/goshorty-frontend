@@ -1,4 +1,5 @@
 import { ChevronDown, Star, User } from 'lucide-react'
+import { LoginButton } from '@/components/login-button'
 
 export function SiteHeader() {
   return (
@@ -68,13 +69,13 @@ export function SiteHeader() {
             >
               Help
             </a>
-            <a
-              href="#signin"
+            <LoginButton
               className="flex items-center gap-2 rounded-full border-2 border-grad-blue px-7 py-2.5 text-lg font-bold text-navy transition-colors hover:bg-navy hover:text-white"
+              aria-label="Sign in"
             >
               Sign In
               <User className="size-4" />
-            </a>
+            </LoginButton>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { ArrowRight, Star } from 'lucide-react'
+import { LoginButton } from '@/components/login-button'
 
 export function Hero() {
   return (
@@ -43,13 +44,13 @@ export function Hero() {
             </div>
 
             <div className="flex justify-center">
-              <button
-                type="button"
+              <LoginButton
                 className="flex items-center justify-center gap-2 rounded-full bg-mint px-10 py-4 text-lg font-bold text-mint-foreground shadow-lg transition-transform hover:scale-[1.02] active:scale-95"
+                aria-label="Get a quote"
               >
                 Get A Quote
                 <ArrowRight className="size-5" />
-              </button>
+              </LoginButton>
             </div>
 
             <div className="mt-7 flex items-center justify-center gap-2 text-sm">
