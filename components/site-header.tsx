@@ -4,7 +4,7 @@ export function SiteHeader() {
   return (
     <header>
       {/* Top utility bar */}
-      <div className="bg-navy text-white">
+      <div className="bg-[#08080a] text-white">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2 text-sm">
           <div className="flex items-center gap-2">
             <span className="font-bold underline underline-offset-2">Excellent</span>
@@ -49,13 +49,15 @@ export function SiteHeader() {
           </button>
 
           <a href="/" className="hidden flex-col items-center md:flex">
-            <span className="font-serif text-4xl font-black tracking-tight text-navy">
+            <span className="font-serif text-[2.75rem] font-black leading-none tracking-tight text-navy">
               GoShorty
             </span>
-            <span className="mt-1 flex w-40 gap-1">
-              <span className="h-1 flex-1 rounded-full bg-grad-green" />
-              <span className="h-1 flex-1 rounded-full bg-grad-blue" />
-              <span className="h-1 flex-1 rounded-full bg-grad-purple" />
+            <span className="mt-1.5 flex w-44 items-center gap-1">
+              {['bg-grad-green', 'bg-grad-green', 'bg-grad-blue', 'bg-grad-blue', 'bg-grad-purple', 'bg-grad-purple'].map(
+                (color, i) => (
+                  <span key={i} className={`h-1 flex-1 rounded-full ${color}`} />
+                ),
+              )}
             </span>
           </a>
 
