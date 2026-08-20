@@ -1,4 +1,4 @@
-import { ArrowRight, BadgeCheck, CheckCircle2, FileText, PoundSterling, Quote, Star } from 'lucide-react'
+import { ArrowRight, CheckCircle2, FileText, PoundSterling, Quote, Star } from 'lucide-react'
 
 const steps = [
   {
@@ -109,13 +109,9 @@ export function HowToPlay() {
             <hr className="my-5 border-navy/10" />
             <p className="text-sm text-navy/60">Showing our 3, 4 &amp; 5 star reviews</p>
             <p className="mt-4 flex items-center gap-2 text-lg font-bold">
-              The Price is too high
-              <span className="inline-flex items-center gap-1 rounded-full px-1 text-sm font-medium text-navy/50">
-                <BadgeCheck className="size-4 fill-grad-blue text-white" />
-                Verified
-              </span>
+              Amazing customer service!
             </p>
-            <p className="mt-1 text-navy/80">The Price is too high</p>
+            <p className="mt-1 text-[10px] text-navy/80">Best cover providers</p>
             <p className="mt-6 text-sm font-bold text-navy/80">
               Mulazem, <span className="font-normal text-navy/50">3 hours ago</span>
             </p>
