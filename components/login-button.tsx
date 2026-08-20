@@ -1,4 +1,4 @@
-'use client'
+import Link from 'next/link'
 
 type LoginButtonProps = {
   className?: string
@@ -8,13 +8,8 @@ type LoginButtonProps = {
 
 export function LoginButton({ className, children, ...props }: LoginButtonProps) {
   return (
-    <button
-      type="button"
-      className={className}
-      onClick={() => window.dispatchEvent(new CustomEvent('open-login'))}
-      {...props}
-    >
+    <Link href="/login" className={className} {...props}>
       {children}
-    </button>
+    </Link>
   )
 }
