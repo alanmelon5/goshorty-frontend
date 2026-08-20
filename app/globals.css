@@ -181,3 +181,48 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ===== Certificate of Motor Insurance (2 x A4 pages) ===== */
+.cert-page {
+  width: 210mm;
+  max-width: 100%;
+  min-height: 297mm;
+  background: #fff;
+}
+.cert-page-2 {
+  border-top: 8px solid #f1f1f1;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  body {
+    background: #fff;
+  }
+  /* Hide everything except the certificate while printing */
+  body :not(.cert-root):not(.cert-root *) {
+    visibility: hidden;
+  }
+  .cert-root,
+  .cert-root * {
+    visibility: visible;
+  }
+  .cert-root {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+  }
+  .cert-page {
+    width: 210mm;
+    min-height: 297mm;
+    break-after: page;
+    page-break-after: always;
+  }
+  .cert-page-2 {
+    border-top: 0;
+    break-after: auto;
+    page-break-after: auto;
+  }
+}

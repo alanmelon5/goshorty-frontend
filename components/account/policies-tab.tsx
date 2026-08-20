@@ -1,9 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { FileText } from 'lucide-react'
+import { FileText, ShieldCheck } from 'lucide-react'
 import { type Policy, formatDateTime, policies } from '@/lib/account-data'
 import { PolicyDetail } from '@/components/account/policy-detail'
+import { Certificate } from '@/components/account/certificate'
 
 const statusBadge: Record<Policy['status'], string> = {
   active: 'border-mint text-mint-foreground',

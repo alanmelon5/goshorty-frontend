@@ -100,6 +100,29 @@ export const accountFaqs = [
   },
 ]
 
+/** Certificate number derived from the policy number, e.g. GS-2026-004812 -> 004812-2026 */
+export function certificateNumber(policy: Policy) {
+  const parts = policy.policyNumber.split('-')
+  if (parts.length === 3) return `${parts[2]}-${parts[1]}`
+  return policy.policyNumber
+}
+
+/** Long-form date + time used on the certificate, e.g. "18:17 hrs on 15 Aug 2026" */
+export function formatCertDateTime(iso: string) {
+  const d = new Date(iso)
+  const time = d.toLocaleTimeString('en-GB', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  })
+  const date = d.toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+  })
+  return `${time} hrs on ${date}`
+}
+
 export function formatDateTime(iso: string) {
   const d = new Date(iso)
   const date = d.toLocaleDateString('en-GB', {
