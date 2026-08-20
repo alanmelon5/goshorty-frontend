@@ -5,8 +5,8 @@ export function DownloadBar() {
     <section id="download" className="bg-navy-soft">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 py-8 text-white md:flex-row">
         <p className="text-center text-lg md:text-left">
-          <span className="font-bold">Download the app:</span> Earn XP &amp; sprint
-          into new levels faster
+          <span className="font-bold">Download the app:</span> Earn Points &amp; Get
+          Temporary Insurance Fast
         </p>
         <div className="flex items-center gap-4">
           <a
