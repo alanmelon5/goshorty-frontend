@@ -53,7 +53,7 @@ export function HowToPlay() {
 
           <div className="mt-14 flex justify-center lg:justify-start">
             <a
-              href="#quote"
+              href="/login"
               className="inline-flex items-center gap-3 rounded-full bg-mint px-10 py-5 text-2xl font-black text-mint-foreground shadow-[0_10px_25px_-8px_rgba(0,0,0,0.35)] transition-transform hover:scale-[1.02] active:scale-95"
             >
               Get a Quote Now
