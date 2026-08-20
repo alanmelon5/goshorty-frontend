@@ -1,8 +1,28 @@
+'use client'
+
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import { CircleArrowRight } from 'lucide-react'
 import { SiteFooter } from '@/components/site-footer'
 
 export default function LoginPage() {
+  const router = useRouter()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    // Test credentials for previewing the customer area
+    if (email === '1@1.com' && password === '1') {
+      setError('')
+      router.push('/account')
+    } else {
+      setError('Incorrect email or password. Please try again.')
+    }
+  }
+
   return (
     <main className="min-h-screen bg-header text-header-foreground">
       {/* Light top utility bar */}
@@ -54,7 +74,7 @@ export default function LoginPage() {
             Login details
           </h2>
 
-          <form className="flex flex-col gap-6" action="#">
+          <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-2">
               <label htmlFor="login-email" className="text-lg font-semibold">
                 Email
@@ -62,6 +82,8 @@ export default function LoginPage() {
               <input
                 id="login-email"
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="jo.bloggs@goshorty.co.uk"
                 className="w-full rounded-xl bg-white px-5 py-4 text-lg text-navy placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-grad-blue"
               />
@@ -74,10 +96,18 @@ export default function LoginPage() {
               <input
                 id="login-password"
                 type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 className="w-full rounded-xl bg-white px-5 py-4 text-lg text-navy placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-grad-blue"
               />
             </div>
+
+            {error && (
+              <p className="rounded-xl bg-red-500/15 px-4 py-3 text-center text-base font-medium text-red-300">
+                {error}
+              </p>
+            )}
 
             <label className="mt-1 flex items-center justify-center gap-3 text-lg">
               <input type="checkbox" className="size-5 accent-mint" />
