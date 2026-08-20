@@ -42,39 +42,47 @@ export function SiteHeader() {
       </div>
 
       {/* Main nav */}
-      <div className="border-b border-navy/10 bg-background">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 items-center px-4 py-5 md:grid-cols-3">
-          <button className="flex items-center gap-1 text-lg font-bold text-navy transition-colors hover:text-navy/70">
+      <div className="bg-header text-header-foreground">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 items-center px-6 py-6 md:grid-cols-3">
+          <button className="flex items-center gap-2 text-xl font-bold text-header-foreground transition-colors hover:text-header-foreground/70">
             What We Cover
-            <ChevronDown className="size-5 text-grad-purple" />
+            <ChevronDown className="size-6 text-grad-purple" strokeWidth={3} />
           </button>
 
           <a href="/" className="hidden flex-col items-center md:flex">
-            <span className="font-serif text-[2.75rem] font-black leading-none tracking-tight text-navy">
+            <span className="font-serif text-5xl font-black leading-none tracking-tight text-header-foreground">
               GoShorty
             </span>
-            <span className="mt-1.5 flex w-44 items-center gap-1">
-              {['bg-grad-green', 'bg-grad-green', 'bg-grad-blue', 'bg-grad-blue', 'bg-grad-purple', 'bg-grad-purple'].map(
-                (color, i) => (
-                  <span key={i} className={`h-1 flex-1 rounded-full ${color}`} />
-                ),
-              )}
+            <span className="mt-2 flex w-[13.5rem] items-center gap-[3px]">
+              {[
+                'bg-grad-green',
+                'bg-grad-green',
+                'bg-grad-green',
+                'bg-grad-blue',
+                'bg-grad-blue',
+                'bg-grad-blue',
+                'bg-grad-purple',
+                'bg-grad-purple',
+                'bg-grad-purple',
+              ].map((color, i) => (
+                <span key={i} className={`h-[3px] flex-1 rounded-full ${color}`} />
+              ))}
             </span>
           </a>
 
-          <div className="flex items-center justify-end gap-6">
+          <div className="flex items-center justify-end gap-8">
             <a
               href="#help"
-              className="hidden text-lg font-bold text-navy sm:inline"
+              className="hidden text-xl font-bold text-header-foreground sm:inline"
             >
               Help
             </a>
             <LoginButton
-              className="flex items-center gap-2 rounded-full border-2 border-grad-blue px-7 py-2.5 text-lg font-bold text-navy transition-colors hover:bg-navy hover:text-white"
+              className="flex items-center gap-2 rounded-full border-2 border-grad-blue px-8 py-3 text-xl font-bold text-header-foreground transition-colors hover:bg-grad-blue/5"
               aria-label="Sign in"
             >
               Sign In
-              <User className="size-4" />
+              <User className="size-5" strokeWidth={2.5} />
             </LoginButton>
           </div>
         </div>
