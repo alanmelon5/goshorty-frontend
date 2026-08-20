@@ -14,6 +14,7 @@ const statusBadge: Record<Policy['status'], string> = {
 
 function PolicyRow({ policy }: { policy: Policy }) {
   const [open, setOpen] = useState(false)
+  const [certOpen, setCertOpen] = useState(false)
   const start = formatDateTime(policy.start)
   const end = formatDateTime(policy.end)
 
@@ -58,17 +59,30 @@ function PolicyRow({ policy }: { policy: Policy }) {
         </div>
       </div>
 
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className="mt-4 flex w-full items-center justify-center gap-2 rounded-full border-2 border-navy px-6 py-2.5 text-sm font-bold text-navy transition-colors hover:bg-navy hover:text-white"
-      >
-        <FileText className="size-4" />
-        Full policy details
-      </button>
+      <div className="mt-4 flex flex-col gap-2">
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-navy px-6 py-2.5 text-sm font-bold text-navy transition-colors hover:bg-navy hover:text-white"
+        >
+          <FileText className="size-4" />
+          Full policy details
+        </button>
+        <button
+          type="button"
+          onClick={() => setCertOpen(true)}
+          className="flex w-full items-center justify-center gap-2 rounded-full bg-mint px-6 py-2.5 text-sm font-bold text-mint-foreground transition-transform hover:scale-[1.01]"
+        >
+          <ShieldCheck className="size-4" />
+          View policy summary
+        </button>
+      </div>
 
       {open ? (
         <PolicyDetail policy={policy} mode="documents" onClose={() => setOpen(false)} />
+      ) : null}
+      {certOpen ? (
+        <Certificate policy={policy} onClose={() => setCertOpen(false)} />
       ) : null}
     </div>
   )

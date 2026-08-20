@@ -38,7 +38,7 @@ export function Certificate({
       >
         {/* Toolbar — hidden when printing */}
         <div className="sticky top-0 z-10 flex items-center justify-between gap-4 bg-navy px-5 py-3 text-white sm:rounded-t-2xl print:hidden">
-          <p className="text-sm font-semibold">Certificate of Motor Insurance</p>
+          <p className="text-sm font-semibold">Policy Summary (Specimen)</p>
           <div className="flex items-center gap-2">
             <button
               type="button"
@@ -65,14 +65,19 @@ export function Certificate({
             {/* Watermark */}
             <span
               aria-hidden
-              className="pointer-events-none absolute inset-0 flex items-center justify-center"
+              className="pointer-events-none absolute inset-0 flex items-center justify-center print:!flex"
             >
-              <span className="rotate-[-30deg] font-serif text-[7rem] font-black uppercase tracking-widest text-[#141b2d]/[0.05]">
-                GoShorty
+              <span className="rotate-[-30deg] font-serif text-[6.5rem] font-black uppercase tracking-widest text-[#141b2d]/[0.06]">
+                Specimen
               </span>
             </span>
 
             <div className="relative flex flex-1 flex-col">
+              {/* Specimen banner */}
+              <div className="mb-4 rounded-md border border-dashed border-[#141b2d]/25 bg-[#141b2d]/[0.04] px-3 py-1.5 text-center text-[10px] font-bold uppercase tracking-widest text-[#141b2d]/60">
+                Specimen · Policy summary — not a certificate of insurance
+              </div>
+
               {/* Header */}
               <div className="flex items-start justify-between gap-6 border-b border-[#141b2d]/15 pb-4">
                 <div>
@@ -103,20 +108,20 @@ export function Certificate({
               {/* Title + cert number */}
               <div className="mt-5 flex items-end justify-between gap-6">
                 <h1 className="font-serif text-2xl font-black uppercase tracking-wide text-[#141b2d]">
-                  Certificate of Motor Insurance
+                  Policy Summary
                 </h1>
                 <div className="text-right">
                   <p className="text-[10px] uppercase tracking-wide text-[#1a1a1a]/50">
-                    Certificate No.
+                    Reference No.
                   </p>
                   <p className="font-mono text-sm font-bold">{certNo}</p>
                 </div>
               </div>
 
               <p className="mt-3 max-w-2xl text-[11px] leading-relaxed text-[#1a1a1a]/70">
-                This certificate of motor insurance serves as evidence that you have the
-                necessary coverage to comply with the law. This document is issued by us
-                and confirms that you have a valid insurance policy for your vehicle.
+                This is a plain-language summary of the cover recorded against your policy.
+                It is provided for your information only and is not a certificate of motor
+                insurance. Full terms are set out in your policy documents.
               </p>
 
               {/* Numbered fields */}
@@ -152,35 +157,34 @@ export function Certificate({
                 </Field>
               </dl>
 
-              {/* Certifying statement + signatory */}
+              {/* Summary statement + issuer */}
               <div className="mt-auto pt-6">
                 <p className="text-[11px] leading-relaxed text-[#1a1a1a]/80">
-                  I hereby certify that the policy to which this certificate relates
-                  satisfies the requirements of the relevant law applicable in Great
-                  Britain, Northern Ireland, the Isle of Man, the Island of Guernsey, the
-                  Island of Jersey and the Island of Alderney.
+                  This document is a summary of the cover recorded for the policy above and
+                  is provided for your information only. It is <strong>not</strong> a
+                  certificate of motor insurance and must not be relied on as evidence that
+                  the requirements of any road-traffic law have been met. Your legal
+                  certificate, where applicable, is issued by the underwriting insurer.
                 </p>
                 <div className="mt-4 flex items-end justify-between gap-6">
                   <div>
-                    <p className="text-[11px] font-semibold">For and on behalf of</p>
+                    <p className="text-[11px] font-semibold">Issued by</p>
                     <p className="font-serif text-base font-black text-[#141b2d]">
-                      GOSHORTY
-                    </p>
-                    <p className="text-[10px] text-[#1a1a1a]/60">Authorised Insurers</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-serif text-lg italic text-[#141b2d]">
                       GoShorty
                     </p>
                     <p className="text-[10px] text-[#1a1a1a]/60">
-                      Authorised Signatory
+                      goshorty.co.uk · for illustration only
                     </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-[11px] font-semibold">Reference</p>
+                    <p className="font-mono text-sm font-bold text-[#141b2d]">{certNo}</p>
                   </div>
                 </div>
                 <p className="mt-3 border-t border-[#141b2d]/10 pt-2 text-[9px] leading-snug text-[#1a1a1a]/50">
-                  Nothing contained in this certificate affects your right as a Third Party
-                  to make a claim. GoShorty is a trading style of Complex to Clear Group
-                  Limited, authorised and regulated by the Financial Conduct Authority.
+                  Specimen document generated by the GoShorty demo app. GoShorty is a
+                  fictional brand used for this project and this summary confers no
+                  insurance cover of any kind.
                 </p>
               </div>
             </div>
@@ -190,21 +194,26 @@ export function Certificate({
           <div className="cert-page cert-page-2 relative mx-auto flex flex-col px-10 py-9">
             <span
               aria-hidden
-              className="pointer-events-none absolute inset-0 flex items-center justify-center"
+              className="pointer-events-none absolute inset-0 flex items-center justify-center print:!flex"
             >
-              <span className="rotate-[-30deg] font-serif text-[7rem] font-black uppercase tracking-widest text-[#141b2d]/[0.05]">
-                GoShorty
+              <span className="rotate-[-30deg] font-serif text-[6.5rem] font-black uppercase tracking-widest text-[#141b2d]/[0.06]">
+                Specimen
               </span>
             </span>
 
             <div className="relative flex flex-1 flex-col">
+              {/* Specimen banner */}
+              <div className="mb-4 rounded-md border border-dashed border-[#141b2d]/25 bg-[#141b2d]/[0.04] px-3 py-1.5 text-center text-[10px] font-bold uppercase tracking-widest text-[#141b2d]/60">
+                Specimen · Policy summary — not a certificate of insurance
+              </div>
+
               <h2 className="font-serif text-lg font-black uppercase tracking-wide text-[#141b2d]">
-                International Cover
+                International Cover (information)
               </h2>
               <p className="mt-3 max-w-2xl text-[11px] leading-relaxed text-[#1a1a1a]/70">
-                The wording below is in place of an international Motor Insurance Card
-                (Green Card) and only provides cover to the minimum extent required by the
-                law of these countries.
+                The wording below summarises where cover of this type would typically
+                apply. It is provided for information only and does not itself act as an
+                international Motor Insurance Card (Green Card) or confer any cover.
               </p>
 
               <div className="mt-5 space-y-3 text-[11px] leading-relaxed text-[#1a1a1a]/85">
