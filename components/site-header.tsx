@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { ChevronDown, Star, User } from 'lucide-react'
 import { LoginButton } from '@/components/login-button'
 
@@ -22,21 +23,21 @@ export function SiteHeader() {
             <span className="font-semibold">Trustpilot</span>
           </div>
           <nav className="hidden items-center gap-6 md:flex" aria-label="Secondary">
-            <a href="#about" className="font-medium underline underline-offset-4 hover:text-mint">
+            <Link href="/about" className="font-medium underline underline-offset-4 hover:text-mint">
               About GoShorty
-            </a>
-            <a href="#download" className="font-medium underline underline-offset-4 hover:text-mint">
+            </Link>
+            <Link href="/download" className="font-medium underline underline-offset-4 hover:text-mint">
               Download Our App For Our Best Prices
-            </a>
-            <a href="#contact" className="font-medium underline underline-offset-4 hover:text-mint">
+            </Link>
+            <Link href="/contact" className="font-medium underline underline-offset-4 hover:text-mint">
               Contact
-            </a>
-            <a href="#blog" className="font-medium underline underline-offset-4 hover:text-mint">
+            </Link>
+            <Link href="/blog" className="font-medium underline underline-offset-4 hover:text-mint">
               Blog
-            </a>
-            <a href="#cover" className="font-medium underline underline-offset-4 hover:text-mint">
+            </Link>
+            <Link href="/who-we-cover" className="font-medium underline underline-offset-4 hover:text-mint">
               Who We Cover
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
@@ -44,10 +45,13 @@ export function SiteHeader() {
       {/* Main nav */}
       <div className="bg-header text-header-foreground">
         <div className="mx-auto grid max-w-7xl grid-cols-2 items-center px-6 py-6 md:grid-cols-3">
-          <button className="flex items-center gap-2 text-xl font-bold text-header-foreground transition-colors hover:text-header-foreground/70">
+          <Link
+            href="/what-we-cover"
+            className="flex items-center gap-2 text-xl font-bold text-header-foreground transition-colors hover:text-header-foreground/70"
+          >
             What We Cover
             <ChevronDown className="size-6 text-grad-purple" strokeWidth={3} />
-          </button>
+          </Link>
 
           <a href="/" className="hidden flex-col items-center md:flex">
             <span className="font-serif text-5xl font-black leading-none tracking-tight text-header-foreground">
@@ -71,12 +75,12 @@ export function SiteHeader() {
           </a>
 
           <div className="flex items-center justify-end gap-8">
-            <a
-              href="#help"
+            <Link
+              href="/help"
               className="hidden text-xl font-bold text-header-foreground sm:inline"
             >
               Help
-            </a>
+            </Link>
             <LoginButton
               className="flex items-center gap-2 rounded-full border-2 border-grad-blue px-8 py-3 text-xl font-bold text-header-foreground transition-colors hover:bg-grad-blue/5"
               aria-label="Sign in"

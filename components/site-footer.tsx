@@ -2,10 +2,10 @@ import Link from 'next/link'
 import { ArrowRight, Lock } from 'lucide-react'
 
 const legalLinks = [
-  'Privacy Policy',
-  'Cookie Policy',
-  'Terms of Business',
-  'Terms of Use',
+  { label: 'Privacy Policy', href: '/help' },
+  { label: 'Cookie Policy', href: '/help' },
+  { label: 'Terms of Business', href: '/faqs' },
+  { label: 'Terms of Use', href: '/faqs' },
 ]
 
 const paymentLogos = [
@@ -60,11 +60,11 @@ export function SiteFooter() {
             <nav className="flex flex-wrap gap-x-8 gap-y-2">
               {legalLinks.map((link) => (
                 <Link
-                  key={link}
-                  href="/"
+                  key={link.label}
+                  href={link.href}
                   className="font-bold underline underline-offset-4 hover:text-mint"
                 >
-                  {link}
+                  {link.label}
                 </Link>
               ))}
             </nav>

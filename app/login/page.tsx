@@ -8,16 +8,16 @@ export default function LoginPage() {
       {/* Light top utility bar */}
       <div className="border-b border-black/10 bg-[#e6e6e6]">
         <div className="mx-auto flex max-w-[1400px] items-center justify-end gap-8 px-6 py-2.5 text-sm font-medium text-navy">
-          <Link href="/" className="underline-offset-2 hover:underline">
+          <Link href="/about" className="underline-offset-2 hover:underline">
             About GoShorty
           </Link>
-          <Link href="/" className="underline-offset-2 hover:underline">
+          <Link href="/faqs" className="underline-offset-2 hover:underline">
             FAQs
           </Link>
-          <Link href="/" className="underline-offset-2 hover:underline">
+          <Link href="/blog" className="underline-offset-2 hover:underline">
             Blog
           </Link>
-          <Link href="/" className="underline-offset-2 hover:underline">
+          <Link href="/contact" className="underline-offset-2 hover:underline">
             Contact us
           </Link>
         </div>
