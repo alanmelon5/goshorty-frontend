@@ -31,19 +31,19 @@ export function HowToPlay() {
       <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
         {/* Steps */}
         <div>
-          <h2 className="max-w-md text-balance font-serif text-4xl font-black leading-tight text-navy md:text-5xl">
+          <h2 className="max-w-md text-balance font-serif text-4xl font-black leading-[1.15] text-navy">
             How to Get Instant Temporary Insurance
           </h2>
 
-          <ul className="mt-12 space-y-10">
+          <ul className="mt-12 space-y-8">
             {steps.map(({ n, numClass, icon: Icon, text, indent }) => (
-              <li key={n} className={`flex items-center gap-4 ${indent}`}>
-                <span className={`w-14 shrink-0 text-center font-serif text-8xl font-black leading-none ${numClass}`}>
+              <li key={n} className={`flex items-center gap-7 ${indent}`}>
+                <span className={`w-12 shrink-0 text-center font-serif text-7xl font-black leading-none ${numClass}`}>
                   {n}
                 </span>
-                <div className="relative flex min-h-[5.5rem] flex-1 items-center rounded-[1.75rem] bg-navy py-5 pl-24 pr-6">
-                  <span className="absolute -left-7 flex size-24 items-center justify-center rounded-full bg-gradient-to-br from-grad-green via-grad-blue to-grad-purple shadow-lg">
-                    <Icon className="size-9 text-white" strokeWidth={2} />
+                <div className="relative flex min-h-[4.75rem] flex-1 items-center rounded-[1.5rem] bg-navy py-4 pl-24 pr-6">
+                  <span className="absolute -left-6 flex size-20 items-center justify-center rounded-full bg-gradient-to-br from-grad-green via-grad-blue to-grad-purple shadow-lg">
+                    <Icon className="size-8 text-white" strokeWidth={2} />
                   </span>
                   <p className="text-lg font-medium leading-snug text-white">{text}</p>
                 </div>
