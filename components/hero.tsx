@@ -22,22 +22,22 @@ export function Hero() {
         <div className="absolute left-0 top-10 hidden size-[26rem] -translate-x-1/3 rounded-full bg-mint/70 lg:block" />
         <div className="absolute -bottom-16 left-0 hidden h-40 w-[36rem] rounded-full bg-mint/70 lg:block" />
 
-        <div className="relative mx-auto flex max-w-7xl items-center justify-center px-4 py-14 lg:py-20">
-          <div className="w-full max-w-2xl rounded-3xl bg-navy/95 p-8 text-white shadow-2xl backdrop-blur-sm md:p-12">
-            <h1 className="text-balance text-center font-serif text-4xl font-black leading-tight md:text-5xl">
+        <div className="relative mx-auto flex max-w-7xl items-center justify-center px-4 py-10 sm:py-14 lg:py-20">
+          <div className="w-full max-w-2xl rounded-3xl bg-navy/95 p-6 text-white shadow-2xl backdrop-blur-sm sm:p-8 md:p-12">
+            <h1 className="text-balance text-center font-serif text-3xl font-black leading-tight sm:text-4xl md:text-5xl">
               Get Temporary Car Insurance in Under 2 Minutes
             </h1>
-            <p className="mt-5 text-center font-serif text-2xl font-bold text-white md:text-3xl">
+            <p className="mt-4 text-center font-serif text-xl font-bold text-white sm:mt-5 sm:text-2xl md:text-3xl">
               Short term cover for cars, vans &amp; learners
             </p>
-            <p className="mt-4 text-center leading-relaxed text-white/80">
+            <p className="mt-4 text-center text-sm leading-relaxed text-white/80 sm:text-base">
               Flexible comprehensive cover from 1 hour to 28 days &ndash; true
               pay-as-you-go flexibility without the annual commitment.
             </p>
 
-            <div className="my-6 flex items-center gap-4 text-sm text-white/80">
+            <div className="my-6 flex items-center gap-3 text-xs text-white/80 sm:gap-4 sm:text-sm">
               <span className="h-px flex-1 bg-white/15" />
-              <span className="whitespace-nowrap">
+              <span className="text-center">
                 Cover from <span className="font-bold text-white">1 hour to 28 days</span> in an instant
               </span>
               <span className="h-px flex-1 bg-white/15" />
@@ -45,7 +45,7 @@ export function Hero() {
 
             <div className="flex justify-center">
               <LoginButton
-                className="flex items-center justify-center gap-2 rounded-full bg-mint px-10 py-4 text-lg font-bold text-mint-foreground shadow-lg transition-transform hover:scale-[1.02] active:scale-95"
+                className="flex items-center justify-center gap-2 rounded-full bg-mint px-8 py-3.5 text-base font-bold text-mint-foreground shadow-lg transition-transform hover:scale-[1.02] active:scale-95 sm:px-10 sm:py-4 sm:text-lg"
                 aria-label="Get a quote"
               >
                 Get A Quote
@@ -53,7 +53,7 @@ export function Hero() {
               </LoginButton>
             </div>
 
-            <div className="mt-7 flex items-center justify-center gap-2 text-sm">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs sm:mt-7 sm:text-sm">
               <span className="font-bold">Excellent</span>
               <span className="flex items-center gap-0.5" aria-hidden="true">
                 {Array.from({ length: 5 }).map((_, i) => (

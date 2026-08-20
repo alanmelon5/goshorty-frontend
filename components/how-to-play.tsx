@@ -27,34 +27,34 @@ const steps = [
 export function HowToPlay() {
   return (
     <section id="about" className="bg-header text-header-foreground">
-      <div className="mx-auto max-w-7xl px-4 py-16 md:py-24">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:py-16 md:py-24">
       <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
         {/* Steps */}
         <div>
-          <h2 className="max-w-md text-balance font-serif text-4xl font-black leading-[1.15] text-navy">
+          <h2 className="max-w-md text-balance font-serif text-3xl font-black leading-[1.15] text-navy sm:text-4xl">
             How to Get Instant Temporary Insurance
           </h2>
 
-          <ul className="mt-12 space-y-8">
+          <ul className="mt-10 space-y-7 sm:mt-12 sm:space-y-8">
             {steps.map(({ n, numClass, icon: Icon, text, indent }) => (
-              <li key={n} className={`flex items-center gap-7 ${indent}`}>
-                <span className={`w-12 shrink-0 text-center font-serif text-7xl font-black leading-none ${numClass}`}>
+              <li key={n} className={`flex items-center gap-4 sm:gap-7 ${indent}`}>
+                <span className={`w-10 shrink-0 text-center font-serif text-6xl font-black leading-none sm:w-12 sm:text-7xl ${numClass}`}>
                   {n}
                 </span>
-                <div className="relative flex min-h-[4.75rem] flex-1 items-center rounded-[1.5rem] bg-navy py-4 pl-24 pr-6">
-                  <span className="absolute -left-6 flex size-20 items-center justify-center rounded-full bg-gradient-to-br from-grad-green via-grad-blue to-grad-purple shadow-lg">
-                    <Icon className="size-8 text-white" strokeWidth={2} />
+                <div className="relative flex min-h-[4.25rem] flex-1 items-center rounded-[1.5rem] bg-navy py-4 pl-[4.5rem] pr-4 sm:min-h-[4.75rem] sm:pl-24 sm:pr-6">
+                  <span className="absolute -left-5 flex size-16 items-center justify-center rounded-full bg-gradient-to-br from-grad-green via-grad-blue to-grad-purple shadow-lg sm:-left-6 sm:size-20">
+                    <Icon className="size-7 text-white sm:size-8" strokeWidth={2} />
                   </span>
-                  <p className="text-lg font-medium leading-snug text-white">{text}</p>
+                  <p className="text-base font-medium leading-snug text-white sm:text-lg">{text}</p>
                 </div>
               </li>
             ))}
           </ul>
 
-          <div className="mt-14 flex justify-center lg:justify-start">
+          <div className="mt-12 flex justify-center sm:mt-14 lg:justify-start">
             <a
               href="/login"
-              className="inline-flex items-center gap-3 rounded-full bg-mint px-10 py-5 text-2xl font-black text-mint-foreground shadow-[0_10px_25px_-8px_rgba(0,0,0,0.35)] transition-transform hover:scale-[1.02] active:scale-95"
+              className="inline-flex items-center gap-3 rounded-full bg-mint px-8 py-4 text-xl font-black text-mint-foreground shadow-[0_10px_25px_-8px_rgba(0,0,0,0.35)] transition-transform hover:scale-[1.02] active:scale-95 sm:px-10 sm:py-5 sm:text-2xl"
             >
               Get a Quote Now
               <ArrowRight className="size-6" strokeWidth={2.5} />
@@ -77,8 +77,8 @@ export function HowToPlay() {
 
           <div className="relative flex items-start justify-between gap-4">
             <div className="flex items-start gap-3">
-              <Quote className="mt-1 size-9 shrink-0 fill-grad-purple text-grad-purple" />
-              <h3 className="text-balance font-serif text-3xl font-black leading-tight text-white md:text-4xl">
+              <Quote className="mt-1 size-7 shrink-0 fill-grad-purple text-grad-purple sm:size-9" />
+              <h3 className="text-balance font-serif text-2xl font-black leading-tight text-white sm:text-3xl md:text-4xl">
                 Don&apos;t just take our word for it
               </h3>
             </div>

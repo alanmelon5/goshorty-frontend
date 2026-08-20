@@ -44,13 +44,13 @@ export function SiteHeader() {
 
       {/* Main nav */}
       <div className="bg-header text-header-foreground">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 items-center px-6 py-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 items-center px-4 py-4 sm:px-6 sm:py-6 md:grid-cols-3">
           <Link
             href="/what-we-cover"
-            className="flex items-center gap-2 text-xl font-bold text-header-foreground transition-colors hover:text-header-foreground/70"
+            className="flex items-center gap-1.5 text-base font-bold text-header-foreground transition-colors hover:text-header-foreground/70 sm:gap-2 sm:text-lg md:text-xl"
           >
             What We Cover
-            <ChevronDown className="size-6 text-grad-purple" strokeWidth={3} />
+            <ChevronDown className="size-5 text-grad-purple sm:size-6" strokeWidth={3} />
           </Link>
 
           <a href="/" className="hidden flex-col items-center md:flex">
@@ -74,19 +74,19 @@ export function SiteHeader() {
             </span>
           </a>
 
-          <div className="flex items-center justify-end gap-8">
+          <div className="flex items-center justify-end gap-4 sm:gap-8">
             <Link
               href="/help"
-              className="hidden text-xl font-bold text-header-foreground sm:inline"
+              className="hidden text-lg font-bold text-header-foreground sm:inline md:text-xl"
             >
               Help
             </Link>
             <LoginButton
-              className="flex items-center gap-2 rounded-full border-2 border-grad-blue px-8 py-3 text-xl font-bold text-header-foreground transition-colors hover:bg-grad-blue/5"
+              className="flex items-center gap-1.5 rounded-full border-2 border-grad-blue px-4 py-2 text-base font-bold text-header-foreground transition-colors hover:bg-grad-blue/5 sm:gap-2 sm:px-8 sm:py-3 sm:text-xl"
               aria-label="Sign in"
             >
               Sign In
-              <User className="size-5" strokeWidth={2.5} />
+              <User className="size-4 sm:size-5" strokeWidth={2.5} />
             </LoginButton>
           </div>
         </div>
