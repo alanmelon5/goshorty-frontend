@@ -26,7 +26,8 @@ const steps = [
 
 export function HowToPlay() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-4 py-16 md:py-24">
+    <section id="about" className="bg-header text-header-foreground">
+      <div className="mx-auto max-w-7xl px-4 py-16 md:py-24">
       <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
         {/* Steps */}
         <div>
@@ -129,6 +130,7 @@ export function HowToPlay() {
             </a>
           </div>
         </div>
+      </div>
       </div>
     </section>
   )
