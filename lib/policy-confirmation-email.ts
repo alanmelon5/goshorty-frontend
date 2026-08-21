@@ -182,6 +182,13 @@ export function renderPolicyConfirmationEmail(d: PolicyEmailData): string {
                             <tr><td align="center" style="font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:bold;line-height:1.35;color:${GREEN};">Need more cover? Get another quote<br/>in the new GoShorty App:</td></tr>
                             <tr>
                               <td align="center" style="padding-top:18px;">
+                                <!--[if mso]>
+                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${quoteUrl}" style="height:52px;v-text-anchor:middle;width:236px;" arcsize="54%" strokecolor="#2ecc57" strokeweight="2px" fillcolor="#1e7d32">
+                                  <w:anchorlock/>
+                                  <center style="color:${WHITE};font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;">Get a New Quote &nbsp;&rarr;</center>
+                                </v:roundrect>
+                                <![endif]-->
+                                <!--[if !mso]><!-->
                                 <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                                   <tr>
                                     <td align="center" style="background-color:#1e7d32;border:2px solid #2ecc57;border-radius:28px;">
@@ -189,6 +196,7 @@ export function renderPolicyConfirmationEmail(d: PolicyEmailData): string {
                                     </td>
                                   </tr>
                                 </table>
+                                <!--<![endif]-->
                               </td>
                             </tr>
                           </table>
