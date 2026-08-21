@@ -4,13 +4,16 @@ import { useEffect, useState } from 'react'
 import { Forward } from 'lucide-react'
 import { type Policy, policies, profile } from '@/lib/account-data'
 
-function useCountdown(endIso: string) {
-  const [now, setNow] = useState(() => Date.now())
+/** Ticks once per second, starting only after mount. `null` until then so the
+ *  server render and first client render agree (avoids hydration mismatch). */
+function useNow() {
+  const [now, setNow] = useState<number | null>(null)
   useEffect(() => {
+    setNow(Date.now())
     const id = setInterval(() => setNow(Date.now()), 1000)
     return () => clearInterval(id)
   }, [])
-  return new Date(endIso).getTime() - now
+  return now
 }
 
 function formatRemaining(ms: number) {
@@ -63,17 +66,18 @@ function RegPlate({ reg }: { reg: string }) {
 }
 
 function ActivePolicyCard({ policy }: { policy: Policy }) {
-  const remaining = useCountdown(policy.end)
+  const now = useNow()
+  const mounted = now !== null
 
   const startMs = new Date(policy.start).getTime()
   const endMs = new Date(policy.end).getTime()
-  const pct = Math.min(
-    Math.max(((Date.now() - startMs) / (endMs - startMs)) * 100, 0),
-    100,
-  )
+  const remaining = mounted ? endMs - now : 0
+  const pct = mounted
+    ? Math.min(Math.max(((now - startMs) / (endMs - startMs)) * 100, 0), 100)
+    : 0
 
-  const start = formatClock(policy.start)
-  const end = formatClock(policy.end)
+  const start = mounted ? formatClock(policy.start) : null
+  const end = mounted ? formatClock(policy.end) : null
 
   return (
     <div className="relative z-10 rounded-[2rem] bg-white p-6 text-navy shadow-2xl">
@@ -118,28 +122,34 @@ function ActivePolicyCard({ policy }: { policy: Policy }) {
         <div className="mt-5 flex items-stretch justify-center">
           <div className="flex-1 text-center">
             <p className="font-serif text-3xl font-black leading-none">
-              {start.time}
-              <span className="align-baseline text-base font-bold">{start.ampm}</span>
+              {start ? start.time : '--:--'}
+              {start ? (
+                <span className="align-baseline text-base font-bold">{start.ampm}</span>
+              ) : null}
             </p>
             <p className="mt-2 text-sm font-medium text-navy/70">
-              {formatDayDate(policy.start)}
+              {mounted ? formatDayDate(policy.start) : '\u00A0'}
             </p>
           </div>
           <div className="w-px bg-navy/15" />
           <div className="flex-1 text-center">
             <p className="font-serif text-3xl font-black leading-none">
-              {end.time}
-              <span className="align-baseline text-base font-bold">{end.ampm}</span>
+              {end ? end.time : '--:--'}
+              {end ? (
+                <span className="align-baseline text-base font-bold">{end.ampm}</span>
+              ) : null}
             </p>
             <p className="mt-2 text-sm font-medium text-navy/70">
-              {formatDayDate(policy.end)}
+              {mounted ? formatDayDate(policy.end) : '\u00A0'}
             </p>
           </div>
         </div>
 
         <p className="mt-6 text-center text-navy/70">
           Policy ends in{' '}
-          <span className="font-black text-navy">{formatRemaining(remaining)}</span>
+          <span className="font-black text-navy">
+            {mounted ? formatRemaining(remaining) : '--'}
+          </span>
         </p>
 
         <div className="mt-3 h-2.5 w-full overflow-hidden rounded-full bg-navy/10">
@@ -155,7 +165,10 @@ function ActivePolicyCard({ policy }: { policy: Policy }) {
 
 export function HomeTab() {
   const active = policies.find((p) => p.status === 'active')
-  const weekday = new Date().toLocaleDateString('en-GB', { weekday: 'long' })
+  const [weekday, setWeekday] = useState('')
+  useEffect(() => {
+    setWeekday(new Date().toLocaleDateString('en-GB', { weekday: 'long' }))
+  }, [])
 
   return (
     <div className="px-5 pb-28 pt-8">
