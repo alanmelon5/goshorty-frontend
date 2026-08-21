@@ -14,6 +14,12 @@ export default function LoginPage() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    // Preview shortcut: typing "email" opens the policy confirmation email
+    if (email.trim().toLowerCase() === 'email') {
+      setError('')
+      router.push('/email')
+      return
+    }
     // Test credentials for previewing the customer area
     if (email === '1@1.com' && password === '1') {
       setError('')
@@ -74,7 +80,7 @@ export default function LoginPage() {
             Login details
           </h2>
 
-          <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+          <form className="flex flex-col gap-6" onSubmit={handleSubmit} noValidate>
             <div className="flex flex-col gap-2">
               <label htmlFor="login-email" className="text-lg font-semibold">
                 Email
